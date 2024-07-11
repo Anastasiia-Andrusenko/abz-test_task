@@ -1,16 +1,20 @@
-export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+import React from 'react';
+import css from './App.module.scss';
+import Header from './Header/Header';
+import Hero from './Hero/Hero';
+import Users from './Users/Users';
+
+function App() {
+  return (<>
+    <header className={css.header}>
+      <Header/>
+    </header>
+    <main>
+      <Hero/>
+      <Users/>
+    </main>
+  </>
   );
-};
+}
+
+export default App;
