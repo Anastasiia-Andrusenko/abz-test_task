@@ -1,33 +1,33 @@
 import Button from 'components/Button/Button';
 import css from './SignUp.module.scss';
-import { useEffect, useState } from 'react';
-import { fetchPositions } from 'api/api';
+// import { useEffect, useState } from 'react';
+// import { fetchPositions } from 'api/api';
 
 const SignUp = ({ updateUserList }) => {
-  const [positions, setPositions] = useState([]);
-  const [error, setError] = useState(null);
-  const [success, setSuccess] = useState(null);
-  const [form, setForm] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    position_id: '',
-    photo: null,
-  });
+  // const [positions, setPositions] = useState([]);
+  // const [error, setError] = useState(null);
+  // const [success, setSuccess] = useState(null);
+  // const [form, setForm] = useState({
+  //   name: '',
+  //   email: '',
+  //   phone: '',
+  //   position_id: '',
+  //   photo: null,
+  // });
 
-  useEffect(() => {
-    const getPosition = async () => {
-      try {
-        const data = await fetchPositions();
-        setPositions(data.positions);
+  // useEffect(() => {
+  //   const getPosition = async () => {
+  //     try {
+  //       const data = await fetchPositions();
+  //       setPositions(data.positions);
 
-      } catch (error) {
-        setError('');
-      };
-    };
+  //     } catch (error) {
+  //       setError('');
+  //     };
+  //   };
     
-    getPosition();
-  }, []);
+  //   getPosition();
+  // }, []);
 
 
   
@@ -69,7 +69,7 @@ const SignUp = ({ updateUserList }) => {
           <div className={css.positionsWrapper}>
           <p className={css.positionsTitle}>Select your position</p>
           <ul className={css.positionList}>
-            {positions.map((position) => <li 
+            {/* {positions.map((position) => <li 
               key={position.is}
               className={css.positionItem}
               >
@@ -82,7 +82,7 @@ const SignUp = ({ updateUserList }) => {
                 />
                 {position.name}
               </label>
-            </li>)}
+            </li>)} */}
           </ul>
           </div>
           
