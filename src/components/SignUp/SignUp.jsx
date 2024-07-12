@@ -1,4 +1,4 @@
-import Button from 'components/Button/Button';
+import Button from '../Button/Button';
 import css from './SignUp.module.scss';
 // import { useEffect, useState } from 'react';
 // import { fetchPositions } from 'api/api';
