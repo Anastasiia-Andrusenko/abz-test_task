@@ -5,7 +5,6 @@ import Button from '../../components/Button/Button';
 import Loader from '../../img/loader.svg';
 import truncateText from '../../utils/truncateText';
 import formatePhone from '../../utils/formatePhone';
-// import Tooltip from '../../components/Tooltip/Tooltip';
 
 const Users = () => {
   const [users, setUsers] = useState([]);
