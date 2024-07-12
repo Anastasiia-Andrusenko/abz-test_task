@@ -6,4 +6,5 @@
   - reset-css
   - sass
   - axios
+  - react-scroll
   

@@ -18,7 +18,7 @@ const fetchToken = async () => {
 
 // ----------- fetch users
 // 
-export const fetchUsers = async (page = 1) => {
+export const fetchUsers = async (page) => {
 
   try {
     const token = await fetchToken();
@@ -28,8 +28,10 @@ export const fetchUsers = async (page = 1) => {
         'Token': token,
       }
     });
-    return response.data;
 
+    const sortedUsers = response.data.users.sort((a, b) => new Date(b.registration_timestamp) - new Date(a.registration_timestamp));
+    // console.log(response.data);
+    return {...response.data, users: sortedUsers};
   } catch (error) {
     console.error('Error fetching users:', error);
     throw error;

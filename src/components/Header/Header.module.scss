@@ -5,10 +5,10 @@
 .container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 14px;
+  justify-content: space-between;
+  // gap: 14px;
   padding: 13px 16px;
-  width: $mobile;
+  min-width: $mobile;
   margin: 0 auto;
   height: 60px;
   // outline: 1px solid black;
@@ -16,7 +16,6 @@
   @media screen and (min-width: $tablet) {
     padding: 13px 32px;
     width: $tablet;
-    justify-content: space-between;
   }
 
   @media screen and (min-width: $desktop) {
