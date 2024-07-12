@@ -1,0 +1,186 @@
+@import '../../styles/main.scss';
+
+.form {
+  max-width: 328px;
+  margin: 0 auto;
+
+  @media screen and (min-width: $tablet) {
+    max-width: 380px;
+  }
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin: 50px auto;
+}
+
+.inputGroup {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.label {
+  // opacity: 0;
+  color: #7E7E7E;
+  position: absolute;
+  top: -9px;
+  left: 16px;
+  font-size: 12px;
+  line-height: 14px;
+  padding: 4px;
+  background-color: $background-color;
+}
+
+
+.input {
+  font-size: 16px;
+  line-height: 26px;
+  height: 54px;
+  padding: 14px 16px;
+  border-radius: 4px;
+  border: 1px solid #d0cfcf;
+  background: $background-color;
+
+  &::placeholder {
+    color: #7e7e7e;
+  }
+
+  &:focus {
+    border-color: #000;
+  }
+
+  &.error {
+    border: 2px solid #CB3D40;
+  }
+}
+
+
+.errorText, 
+.helperText {
+  font-size: 12px;
+  text-align: start;
+  margin-left: 16px;
+  margin-top: 4px;
+}
+
+.helperText {
+  color: #7E7E7E;
+}
+
+.errorText {
+  color: #CB3D40;
+}
+
+// ----------------------- стилі для input radio position
+.positionsWrapper {
+  width: 100%;
+  text-align: start;
+  margin-left: 20px;
+  
+  @media screen and (min-width: $tablet) {
+    margin: 0;
+  }
+  
+} 
+
+.positionList {
+  @extend %list;
+}
+
+.positionItem {
+  width: fit-content;
+  cursor: pointer;
+}
+
+.positionsTitle,
+.positionName {
+  line-height: 26px;
+}
+
+.positionsTitle {
+  margin-bottom: 14px;
+}
+
+.positionName {
+  display: flex;
+  align-items: center;
+}
+
+.radioBtn {
+  display: none;
+}
+
+.customRadioBtn {
+  width: 20px;
+  height: 20px;
+  background: url('../../img/radioBtnUnchecked.svg') no-repeat center center;
+  background-size: contain;
+  margin-right: 10px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.radioBtn:checked + .customRadioBtn {
+  background: url('../../img/radioBtnChecked.svg') no-repeat center center;
+  background-size: contain;
+}
+
+// .positionName input:focus + .customRadioBtn {
+//   outline: 2px solid #000;
+// }
+
+.fileInputWrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid  #D0CFCF;
+  background:  #F8F8F8;
+  border-radius: 4px;
+  width: 328px;
+  height: 54px;
+  transition: border-color 0.3s;
+
+
+
+  @media screen and (min-width: $tablet) {
+    width: 380px;
+  }
+}
+
+.error {
+  border: 2px solid #CB3D40;
+  }
+
+
+.fileInputButton, .fileInputButtonErr {
+  cursor: pointer;
+  height: 54px;
+  font-size: 16px;
+line-height: 26px;
+padding: 14px;
+border: 1px solid $text-main-color;
+border-radius: 4px 0px 0px 4px;
+}
+
+.fileInputButtonErr {
+  border: 2px solid transparent;
+  border-right: 2px solid #CB3D40;
+}
+
+.fileInputField {
+  display: none;
+}
+
+.customInput {
+  color: #7E7E7E;
+line-height: 26px;
+padding: 14px 16px;
+}
+
+.selectedFile {
+  
+color: $text-main-color;
+}

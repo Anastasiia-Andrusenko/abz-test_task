@@ -5,23 +5,32 @@ import Button from '../../components/Button/Button';
 import Loader from '../../img/loader.svg';
 import truncateText from '../../utils/truncateText';
 import formatePhone from '../../utils/formatePhone';
+import avatar from '../../img/avatar.svg';
 
-const Users = () => {
+const Avatar = ({ src, alt }) => {
+  const [userPhoto, setUserPhoto] = useState(src);
+
+  const onError = () => {
+    setUserPhoto(avatar);
+  };
+
+  return (
+    <img className={css.avatar} src={userPhoto} alt={alt} onError={onError} />
+  );
+};
+
+const Users = ({ update }) => {
   const [users, setUsers] = useState([]);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    getUsers(page);
-  }, [page]);
-
-  const getUsers = async page => {
+  const getUsers = async (page) => {
     setIsLoading(true);
     try {
       const data = await fetchUsers(page);
-      setUsers(prevUsers => [...prevUsers, ...data.users]);
+      setUsers((prevUsers) => [...prevUsers, ...data.users]);
       setHasMore(data.page < data.total_pages);
     } catch (error) {
       setError(`Failed to fetch users. Please try again later.`);
@@ -31,17 +40,29 @@ const Users = () => {
     }
   };
 
+  useEffect(() => {
+    setUsers([]);
+    setPage(1);
+    getUsers(1);
+  }, [update]);
+
+  useEffect(() => {
+    if (page > 1) {
+      getUsers(page);
+    }
+  }, [page]);
+
+
   return (
     <section className={css.section}>
       <div className={css.container}>
         <h2 className={css.title}>Working with GET request</h2>
         {error && <p className={css.error}>{error}</p>}
-        {/* {tooltip.visible && <Tooltip text={tooltip.text} x={tooltip.x} y={tooltip.y}/>} */}
         <ul className={css.usersList}>
           {users.map((user, index) => (
             <li key={`${user.id}+${index}`} className={css.userCard}>
               <div className={css.cardContainer}>
-                <img className={css.avatar} src={user.photo} alt={user.name} />
+                <Avatar src={user.photo} alt={user.name} />
                 <div className={css.textWrapper}>
                   <p className={css.name} data-tooltip={user.name}>
                     {truncateText(user.name)}

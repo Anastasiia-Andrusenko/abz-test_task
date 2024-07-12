@@ -7,4 +7,5 @@
   - sass
   - axios
   - react-scroll
+  - react-icons
   

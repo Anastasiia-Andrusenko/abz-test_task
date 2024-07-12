@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import css from './App.module.scss';
 import Header from './Header/Header';
 import Hero from './Hero/Hero';
 import Users from './Users/Users';
-import SignUp from './SignUp/SignUp';
+import SignUpSection from './SignUpSection/SignUpSection';
 import { Element, scroller } from 'react-scroll';
+import BtnToTop from './BtnToTop/BtnToTop';
+import Footer from './Footer/Footer';
 
 function App() {
+  const [update, setUpdate] = useState(false);
 
-  const onClickBtn = (element) => {
+  const onClickBtn = element => {
     scroller.scrollTo(element, {
       duration: 1500,
       smooth: true,
@@ -17,16 +20,30 @@ function App() {
     // console.log(`${element}`);
   };
 
-  return (<>
-    <header className={css.header}>
-      <Header onClick={onClickBtn}/>
-    </header>
-    <main>
-      <Hero onClick={onClickBtn}/>
-      <Element name='users'><Users /></Element>
-      <Element name='signUp'><SignUp /></Element>
-    </main>
-  </>
+  const updateUsers = useCallback(() => {
+    console.log('updt users');
+    setUpdate(prev => !prev);
+  }, []);
+
+  return (
+    <>
+      <header className={css.header}>
+        <Header onClick={onClickBtn} />
+      </header>
+      <main className={css.main}>
+        <Hero onClick={onClickBtn} />
+        <Element name="users">
+          <Users update={update} />
+        </Element>
+        <Element name="signUp">
+          <SignUpSection onRegisterSuccess={updateUsers} />
+        </Element>
+        <BtnToTop />
+      </main>
+      <footer>
+        <Footer/>
+      </footer>
+    </>
   );
 }
 
