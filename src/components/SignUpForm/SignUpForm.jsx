@@ -1,7 +1,13 @@
+//----------------------------------------------- Ф О Р М А __РЕЄСТРАЦІЇ ЮЗЕРА
+// Компонент містить форму з різними полями. Валідацію цих полів. Збереження даних та
+// запит надсилання цих даних. Також багато логіки для стилізації імпутів для відображення
+// повідомлень з помилкою про некоректність значень, або навпаки - "візуальне" підтвердження
+// що данні пройшли валідацію.
+
 import { useState } from 'react';
 import css from './SignUpForm.module.scss';
 import Button from '../Button/Button';
-import truncateText from 'src/utils/truncateText';
+import { truncateFieldInput } from 'src/utils/truncateText';
 
 const SignUpForm = ({ positions, onRegister }) => {
 	const [form, setForm] = useState({
@@ -13,17 +19,18 @@ const SignUpForm = ({ positions, onRegister }) => {
 		errors: {},
 	});
 
-	//---------------- Email pattern RFC2822
+	//------------------ ------------------- Email pattern RFC2822
 	const emailPattern =
 		// eslint-disable-next-line no-control-regex
 		/^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/;
 
+	//------------------------------------ ВАЛІДАЦІЯ ВСІХ ПОЛІВ
 	const validateInput = (name, value) => {
 		let error = '';
 		switch (name) {
 			case 'name':
-				if (value.length < 3 || value.length > 60) {
-					error = 'Name must be between 3 and 60 characters';
+				if (value.length < 2 || value.length > 60) {
+					error = 'Name must be between 2 and 60 characters';
 				}
 				break;
 			case 'email':
@@ -53,6 +60,7 @@ const SignUpForm = ({ positions, onRegister }) => {
 		return error;
 	};
 
+	//------------------------------------ ЗНАЧЕННЯ ПОЛІВ (input text)
 	const handleChange = e => {
 		const { name, value } = e.target;
 		let formattedValue = value;
@@ -61,10 +69,18 @@ const SignUpForm = ({ positions, onRegister }) => {
 			formattedValue = value.toLowerCase();
 		}
 
-		const error = validateInput(name, value);
+		if (name === 'name') {
+			formattedValue = value.trimStart();
+		}
+
+		let error = '';
+		if (formattedValue.length >= 1) {
+			error = validateInput(name, formattedValue);
+		}
+
 		setForm(prevForm => ({
 			...prevForm,
-			[name]: formattedValue.trim(),
+			[name]: formattedValue,
 			errors: {
 				...prevForm.errors,
 				[name]: error,
@@ -72,6 +88,7 @@ const SignUpForm = ({ positions, onRegister }) => {
 		}));
 	};
 
+	//------------------------------------- ЗАВАНТАЖЕННЯ ЗОБРАЖЕННЯ (input file)
 	const handleFileChange = e => {
 		const file = e.target.files[0];
 		const error = validateInput('photo', file);
@@ -85,15 +102,16 @@ const SignUpForm = ({ positions, onRegister }) => {
 		}));
 	};
 
-  const handlePositionChange = e => {
-    const { value } = e.target;
-    setForm(prevForm => ({
-      ...prevForm,
-      position_id: value,
-    }));
-  };
+	//--------------------------------------- ВИБІР ПОЗИЦІЇ (input radio)
+	const handlePositionChange = e => {
+		const { value } = e.target;
+		setForm(prevForm => ({
+			...prevForm,
+			position_id: value,
+		}));
+	};
 
-
+	//--------------------------------------- ВІДПРАВКА ФОРМИ ( логіка при кліку SUBMIT )
 	const handleSubmit = async e => {
 		e.preventDefault();
 
@@ -113,32 +131,39 @@ const SignUpForm = ({ positions, onRegister }) => {
 				errors,
 			}));
 			return;
-		};
+		}
 
-	const isRegistered = await onRegister(form);
-    if (isRegistered) {
-      resetForm();
-    };
+		const isRegistered = await onRegister(form);
+		if (isRegistered) {
+			resetForm();
+		}
 	};
 
-  const resetForm = () => {
-    setForm({
-      name: '',
-      email: '',
-      phone: '',
-      position_id: '',
-      photo: null,
-      errors: {},
-    });
-  };
+	//------------------- ----------------- СКИДАННЯ ВВЕДЕНИХ ЗНАЧЕНЬ (після відправки форми)
+	const resetForm = () => {
+		setForm({
+			name: '',
+			email: '',
+			phone: '',
+			position_id: '',
+			photo: null,
+			errors: {},
+		});
+	};
 
 	return (
 		<>
 			<form className={css.form} onSubmit={handleSubmit}>
 				<div className={css.inputGroup}>
-					<label className={css.label}>Your name</label>
+					{form.name && (
+						<label
+							className={`${form.errors.name ? css.labelError : css.label}`}
+						>
+							Your name
+						</label>
+					)}
 					<input
-						className={css.input}
+						className={`${form.errors.name ? css.inputError : css.input}`}
 						type="text"
 						name="name"
 						placeholder="Your name"
@@ -153,9 +178,15 @@ const SignUpForm = ({ positions, onRegister }) => {
 					)}
 				</div>
 				<div className={css.inputGroup}>
-					<label className={css.label}>Email</label>
+					{form.email && (
+						<label
+							className={`${form.errors.email ? css.labelError : css.label}`}
+						>
+							Email
+						</label>
+					)}
 					<input
-						className={css.input}
+						className={`${form.errors.email ? css.inputError : css.input}`}
 						type="email"
 						name="email"
 						placeholder="Email"
@@ -170,9 +201,14 @@ const SignUpForm = ({ positions, onRegister }) => {
 					)}
 				</div>
 				<div className={css.inputGroup}>
-					<label className={css.label}>Phone</label>
+					{form.phone && (
+						<label className={form.errors.phone ? css.labelError : css.label}>
+							Phone
+						</label>
+					)}
 					<input
-						className={css.input}
+						id=""
+						className={`${form.errors.phone ? css.inputError : css.input}`}
 						type="tel"
 						name="phone"
 						placeholder="Phone"
@@ -201,9 +237,8 @@ const SignUpForm = ({ positions, onRegister }) => {
 										onChange={handlePositionChange}
 										required
 										className={css.radioBtn}
-                    checked={form.position_id === String(position.id)}
-                    // checked={form.position_id === position.id}
-                    tabIndex="0"
+										checked={form.position_id === String(position.id)}
+										tabIndex="0"
 									/>
 									<span className={css.customRadioBtn} />
 									{position.name}
@@ -229,7 +264,7 @@ const SignUpForm = ({ positions, onRegister }) => {
 						<span className={css.customInput}>
 							{form.photo ? (
 								<p className={css.selectedFile}>
-									{truncateText(form.photo.name, 24)}
+									{truncateFieldInput(form.photo.name, 24)}
 								</p>
 							) : (
 								`Upload your photo`
@@ -253,7 +288,11 @@ const SignUpForm = ({ positions, onRegister }) => {
 					type="submit"
 					text="Sign up"
 					disabled={
-						!form.name || !form.email || !form.phone || !form.position_id
+						!form.name ||
+						!form.email ||
+						!form.phone ||
+						!form.position_id ||
+						!form.photo
 					}
 				/>
 			</form>
@@ -262,3 +301,6 @@ const SignUpForm = ({ positions, onRegister }) => {
 };
 
 export default SignUpForm;
+
+/* P.S:  Для покращення читаємості коду, краще розділити цей компонент, в реальному проекті я б так зробила, але
+зараз вирішила залишити щоб вся логіка повʼязана із формаю була в 1му файлі */

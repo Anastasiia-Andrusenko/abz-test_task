@@ -1,60 +1,59 @@
 @import '../../styles/main.scss';
 
 .wrapper {
-  width: 100%;
-  background-color: $primary-color;
-  position: static;
-  bottom: 0;
+	width: 100%;
+	background-color: $primary-color;
+	position: static;
+	bottom: 0;
 }
 
-
 .footer {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .copyright {
-  margin: 0;
-  padding: 0;
-  color: $text-main-color;
+	margin: 0;
+	padding: 0;
+	color: $text-main-color;
 }
 
 .contactList {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-wrap: wrap;
 
-  gap: 30px;
+	gap: 30px;
 }
 
 .contactItem:hover {
-  transform: scale(1.1);
+	transform: scale(1.1);
 
-  .link {
-    color: $text-main-color;
-    box-shadow: 0px 4px 14px 0px rgba(0,0,0,0.25);
--webkit-box-shadow: 0px 4px 14px 0px rgba(0,0,0,0.25);
--moz-box-shadow: 0px 4px 14px 0px rgba(0,0,0,0.25);
-  }
+	.link {
+		color: $text-main-color;
+		box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.25);
+		-webkit-box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.25);
+		-moz-box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.25);
+	}
 }
 
 .link {
-  color: $text-main-color;
-  text-decoration: none;
-  font-size: 12px;
-  padding: 10px;
-  transition: all 250ms cubic-bezier(0.19, 1, 0.22, 1);
-  border-radius: 16px;
+	color: $text-main-color;
+	text-decoration: none;
+	font-size: 12px;
+	padding: 10px;
+	transition: all 250ms cubic-bezier(0.19, 1, 0.22, 1);
+	border-radius: 16px;
 }
 
 .icon {
-  font-size: 24px;
-  vertical-align: middle;
-  margin-right: 10px;
+	font-size: 24px;
+	vertical-align: middle;
+	margin-right: 10px;
 }

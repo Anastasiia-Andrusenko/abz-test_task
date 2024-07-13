@@ -1,36 +1,36 @@
 @import '../../styles/main.scss';
 
 .btnWrapper {
-  z-index: 100;
-  cursor: pointer;
-  position: fixed;
-  bottom: 120px;
-  right: 14px;
-  opacity: 0;
-  transition: opacity 1500ms ease-in-out;
-  border-radius: 50%;
+	z-index: 100;
+	cursor: pointer;
+	position: fixed;
+	bottom: 120px;
+	right: 14px;
+	opacity: 0;
+	transition: opacity 1500ms ease-in-out;
+	border-radius: 50%;
 
-  @media screen and (min-width: $tablet) {
-    right: 2%;
-  }
+	@media screen and (min-width: $tablet) {
+		right: 2%;
+	}
 
-  @media screen and (min-width: $desktop) {
-    right: 10%;
-  }
+	@media screen and (min-width: $desktop) {
+		right: 10%;
+	}
 }
 
 .btnWrapper.visible {
-  opacity: 1;
+	opacity: 1;
 }
 
 .btn {
-  width: 40px;
-  height: 40px;
-  padding: 4px;
+	width: 40px;
+	height: 40px;
+	padding: 4px;
 }
 
 .icon {
-  width: 100%;
-  height: 100%;
-  color: $text-main-color;
+	width: 100%;
+	height: 100%;
+	color: $text-main-color;
 }
