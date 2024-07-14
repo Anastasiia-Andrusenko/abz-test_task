@@ -1,9 +1,13 @@
+@import './settings.scss';
 
-// settings 
-// @import '/path/to/reset-css/reset.css';
-@import './utils/variables';
-@import './utils/breakpoints';
-@import './utils/placeholders';
-@import './base/base-styles';
-
-// ...
+// -------------------------------------- components
+@import '../components/App.module.scss';
+@import '../components/BtnToTop/BtnToTop.module.scss';
+@import '../components/Button/Button.module.scss';
+@import '../components/Footer/Footer.module.scss';
+@import '../components/Header/Header.module.scss';
+@import '../components/Hero/Hero.module.scss';
+@import '../components/Modal/Modal.module.scss';
+@import '../components/SignUpForm/SignUpForm.module.scss';
+@import '../components/SignUpSection/SignUpSection.module.scss';
+@import '../components/Users/Users.module.scss';
