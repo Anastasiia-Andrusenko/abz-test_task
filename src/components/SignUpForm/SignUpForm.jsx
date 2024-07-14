@@ -170,6 +170,7 @@ const SignUpForm = ({ positions, onRegister }) => {
 						value={form.name}
 						onChange={handleChange}
 						required
+						autoComplete="user name"
 					/>
 					{form.errors.name ? (
 						<span className={css.errorText}>{form.errors.name}</span>
@@ -193,6 +194,7 @@ const SignUpForm = ({ positions, onRegister }) => {
 						value={form.email}
 						onChange={handleChange}
 						required
+						autoComplete="email"
 					/>
 					{form.errors.email ? (
 						<span className={css.errorText}>{form.errors.email}</span>
@@ -215,6 +217,7 @@ const SignUpForm = ({ positions, onRegister }) => {
 						value={form.phone}
 						onChange={handleChange}
 						required
+						autoComplete="phone number"
 					/>
 					{form.errors.phone ? (
 						<span className={css.errorText}>{form.errors.phone}</span>
@@ -236,6 +239,7 @@ const SignUpForm = ({ positions, onRegister }) => {
 										value={position.id}
 										onChange={handlePositionChange}
 										required
+										
 										className={css.radioBtn}
 										checked={form.position_id === String(position.id)}
 										tabIndex="0"

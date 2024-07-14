@@ -91,7 +91,7 @@ const Users = ({ update }) => {
 					))}
 				</ul>
 				{isLoading && (
-					<img src={Loader} alt="loading..." className={css.loader} />
+					<img src={Loader} alt="loading..." loading='lazy' className={css.loader} />
 				)}
 			</div>
 			{hasMore && (

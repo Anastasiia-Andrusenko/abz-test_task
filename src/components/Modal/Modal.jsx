@@ -58,7 +58,7 @@ const Modal = ({ isOpen, message, onClose, isSuccess }) => {
 		<div className={css.modal} onClick={handleOverlayClick}>
 			<div className={css.modalContent}>
 				{isSuccess ? (
-					<img src={SuccessImg} alt="success" className={css.successImg} />
+					<img src={SuccessImg} alt="success" loading="lazy" className={css.successImg} />
 				) : (
 					<TbFaceIdError className={css.errorImg} />
 				)}

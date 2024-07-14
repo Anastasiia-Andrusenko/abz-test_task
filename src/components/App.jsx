@@ -1,13 +1,15 @@
 // ----------------------------------------------- App - збирає разом всі компоненти
-import React, { useCallback, useState } from 'react';
+import React, { lazy, Suspense, useCallback, useState } from 'react';
 import css from './App.module.scss';
-import Header from './Header/Header';
-import Hero from './Hero/Hero';
-import Users from './Users/Users';
-import SignUpSection from './SignUpSection/SignUpSection';
 import { Element, scroller } from 'react-scroll';
 import BtnToTop from './BtnToTop/BtnToTop';
-import Footer from './Footer/Footer';
+import Loader from '../img/loader.svg';
+
+const Header = lazy(() => import('../components/Header/Header'));
+const Hero = lazy(() => import('../components/Hero/Hero'));
+const Users = lazy(() => import('../components/Users/Users'));
+const SignUp = lazy(() => import('../components/SignUpSection/SignUpSection'));
+const Footer = lazy(() => import('../components/Footer/Footer'));
 
 function App() {
 	const [update, setUpdate] = useState(false);
@@ -28,7 +30,16 @@ function App() {
 	}, []);
 
 	return (
-		<>
+		<Suspense
+			fallback={
+				<img
+					src={Loader}
+					alt="loading..."
+					loading="lazy"
+					className={css.loader}
+				/>
+			}
+		>
 			<header className={css.header}>
 				<Header onClick={onClickBtn} />
 			</header>
@@ -38,14 +49,14 @@ function App() {
 					<Users update={update} />
 				</Element>
 				<Element name="signUp">
-					<SignUpSection onRegisterSuccess={updateUsers} />
+					<SignUp onRegisterSuccess={updateUsers} />
 				</Element>
 				<BtnToTop />
 			</main>
 			<footer>
 				<Footer />
 			</footer>
-		</>
+		</Suspense>
 	);
 }
 
