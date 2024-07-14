@@ -170,7 +170,7 @@ const SignUpForm = ({ positions, onRegister }) => {
 						value={form.name}
 						onChange={handleChange}
 						required
-						autoComplete="user_name"
+						autoComplete="name"
 					/>
 					{form.errors.name ? (
 						<span className={css.errorText}>{form.errors.name}</span>
@@ -217,7 +217,7 @@ const SignUpForm = ({ positions, onRegister }) => {
 						value={form.phone}
 						onChange={handleChange}
 						required
-						autoComplete="phone_number"
+						autoComplete="number"
 					/>
 					{form.errors.phone ? (
 						<span className={css.errorText}>{form.errors.phone}</span>
