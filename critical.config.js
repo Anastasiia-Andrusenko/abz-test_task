@@ -6,7 +6,7 @@ generate({
 	inline: true,
 	base: 'build/',
 	src: 'index.html',
-	css: ['build/static/css/main.4bd2692d.css'],
+	css: ['build/static/css/main.6881d566.css'],
 	width: 1300,
 	height: 900,
 	target: {
