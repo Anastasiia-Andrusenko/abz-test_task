@@ -1,7 +1,21 @@
 {
   "files": {
-    "main.css": "/abz-test_task/static/css/main.d71c6a4a.css",
-    "main.js": "/abz-test_task/static/js/main.9bfe650f.js",
+    "main.css": "/abz-test_task/static/css/main.5f02f2f3.css",
+    "main.js": "/abz-test_task/static/js/main.55f39e42.js",
+    "static/css/559.91c56005.chunk.css": "/abz-test_task/static/css/559.91c56005.chunk.css",
+    "static/js/559.2d16974a.chunk.js": "/abz-test_task/static/js/559.2d16974a.chunk.js",
+    "static/css/897.d8b772e0.chunk.css": "/abz-test_task/static/css/897.d8b772e0.chunk.css",
+    "static/js/897.1d980e4d.chunk.js": "/abz-test_task/static/js/897.1d980e4d.chunk.js",
+    "static/css/245.2c79ae8d.chunk.css": "/abz-test_task/static/css/245.2c79ae8d.chunk.css",
+    "static/js/245.fa2b573d.chunk.js": "/abz-test_task/static/js/245.fa2b573d.chunk.js",
+    "static/css/655.d10e8e31.chunk.css": "/abz-test_task/static/css/655.d10e8e31.chunk.css",
+    "static/js/655.8b258b72.chunk.js": "/abz-test_task/static/js/655.8b258b72.chunk.js",
+    "static/css/269.3837dc8c.chunk.css": "/abz-test_task/static/css/269.3837dc8c.chunk.css",
+    "static/js/269.73ffa0d7.chunk.js": "/abz-test_task/static/js/269.73ffa0d7.chunk.js",
+    "static/js/423.7fb1c033.chunk.js": "/abz-test_task/static/js/423.7fb1c033.chunk.js",
+    "static/js/213.aef3babf.chunk.js": "/abz-test_task/static/js/213.aef3babf.chunk.js",
+    "static/js/397.facb84f8.chunk.js": "/abz-test_task/static/js/397.facb84f8.chunk.js",
+    "static/js/184.01833b1f.chunk.js": "/abz-test_task/static/js/184.01833b1f.chunk.js",
     "static/media/hero_bg-big.webp": "/abz-test_task/static/media/hero_bg-big.c8f055e12ce527d29d30.webp",
     "static/media/hero_bg-small.webp": "/abz-test_task/static/media/hero_bg-small.daffef255d0a864b1d7c.webp",
     "static/media/success.svg": "/abz-test_task/static/media/success.0d3202ba11b04fa7364b0f83ce42aea5.svg",
@@ -11,11 +25,25 @@
     "static/media/loader.svg": "/abz-test_task/static/media/loader.0aaf07f39acaa32ce036564ce35dba88.svg",
     "static/media/radioBtnChecked.svg": "/abz-test_task/static/media/radioBtnChecked.116a20546aded640b219.svg",
     "static/media/radioBtnUnchecked.svg": "/abz-test_task/static/media/radioBtnUnchecked.9793d8705bb063591e9e.svg",
-    "main.d71c6a4a.css.map": "/abz-test_task/static/css/main.d71c6a4a.css.map",
-    "main.9bfe650f.js.map": "/abz-test_task/static/js/main.9bfe650f.js.map"
+    "main.5f02f2f3.css.map": "/abz-test_task/static/css/main.5f02f2f3.css.map",
+    "main.55f39e42.js.map": "/abz-test_task/static/js/main.55f39e42.js.map",
+    "559.91c56005.chunk.css.map": "/abz-test_task/static/css/559.91c56005.chunk.css.map",
+    "559.2d16974a.chunk.js.map": "/abz-test_task/static/js/559.2d16974a.chunk.js.map",
+    "897.d8b772e0.chunk.css.map": "/abz-test_task/static/css/897.d8b772e0.chunk.css.map",
+    "897.1d980e4d.chunk.js.map": "/abz-test_task/static/js/897.1d980e4d.chunk.js.map",
+    "245.2c79ae8d.chunk.css.map": "/abz-test_task/static/css/245.2c79ae8d.chunk.css.map",
+    "245.fa2b573d.chunk.js.map": "/abz-test_task/static/js/245.fa2b573d.chunk.js.map",
+    "655.d10e8e31.chunk.css.map": "/abz-test_task/static/css/655.d10e8e31.chunk.css.map",
+    "655.8b258b72.chunk.js.map": "/abz-test_task/static/js/655.8b258b72.chunk.js.map",
+    "269.3837dc8c.chunk.css.map": "/abz-test_task/static/css/269.3837dc8c.chunk.css.map",
+    "269.73ffa0d7.chunk.js.map": "/abz-test_task/static/js/269.73ffa0d7.chunk.js.map",
+    "423.7fb1c033.chunk.js.map": "/abz-test_task/static/js/423.7fb1c033.chunk.js.map",
+    "213.aef3babf.chunk.js.map": "/abz-test_task/static/js/213.aef3babf.chunk.js.map",
+    "397.facb84f8.chunk.js.map": "/abz-test_task/static/js/397.facb84f8.chunk.js.map",
+    "184.01833b1f.chunk.js.map": "/abz-test_task/static/js/184.01833b1f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d71c6a4a.css",
-    "static/js/main.9bfe650f.js"
+    "static/css/main.5f02f2f3.css",
+    "static/js/main.55f39e42.js"
   ]
 }
