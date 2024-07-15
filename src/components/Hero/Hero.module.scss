@@ -11,6 +11,14 @@
 		url('../../img/hero_bg-small.webp');
 	background-size: cover;
 	background-position: center;
+	
+	&::before {
+    content: '';
+    display: none;
+    background-image: url('../../img/hero_bg-small.webp'); 
+  }
+
+	
 
 	@media screen and (min-width: $tablet) {
 		background-position: bottom;
@@ -26,6 +34,12 @@
 		background-size: cover;
 		background-position: bottom;
 		height: 650px;
+
+		&::after {
+			content: '';
+			display: none;
+			background-image: url('../../img/hero_bg-big.webp');
+		}
 	}
 }
 

@@ -56,6 +56,13 @@ const Users = ({ update }) => {
 		}
 	}, [page]);
 
+	// може так? але як налаштувати в залежності від екрану та їх стилі?
+	// const imageSmall = new Image();
+  // imageSmall.src = '../../img/hero_bg-small.webp';
+
+  // const imageBig = new Image();
+  // imageBig.src = '../../img/hero_bg-big.webp';
+
 	return (
 		<section className={css.section}>
 			<div className={css.container}>
