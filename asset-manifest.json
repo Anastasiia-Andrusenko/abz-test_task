@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/abz-test_task/static/css/main.2437fb43.css",
-    "main.js": "/abz-test_task/static/js/main.f2128c48.js",
+    "main.css": "/abz-test_task/static/css/main.7cad7e24.css",
+    "main.js": "/abz-test_task/static/js/main.dc404423.js",
     "static/css/559.f29f5585.chunk.css": "/abz-test_task/static/css/559.f29f5585.chunk.css",
     "static/js/559.2d16974a.chunk.js": "/abz-test_task/static/js/559.2d16974a.chunk.js",
-    "static/css/897.c9dae29d.chunk.css": "/abz-test_task/static/css/897.c9dae29d.chunk.css",
+    "static/css/897.ce041ec4.chunk.css": "/abz-test_task/static/css/897.ce041ec4.chunk.css",
     "static/js/897.1d980e4d.chunk.js": "/abz-test_task/static/js/897.1d980e4d.chunk.js",
     "static/css/289.5991c159.chunk.css": "/abz-test_task/static/css/289.5991c159.chunk.css",
     "static/js/289.1482bf29.chunk.js": "/abz-test_task/static/js/289.1482bf29.chunk.js",
@@ -25,11 +25,11 @@
     "static/media/loader.svg": "/abz-test_task/static/media/loader.0aaf07f39acaa32ce036564ce35dba88.svg",
     "static/media/radioBtnChecked.svg": "/abz-test_task/static/media/radioBtnChecked.116a20546aded640b219.svg",
     "static/media/radioBtnUnchecked.svg": "/abz-test_task/static/media/radioBtnUnchecked.9793d8705bb063591e9e.svg",
-    "main.2437fb43.css.map": "/abz-test_task/static/css/main.2437fb43.css.map",
-    "main.f2128c48.js.map": "/abz-test_task/static/js/main.f2128c48.js.map",
+    "main.7cad7e24.css.map": "/abz-test_task/static/css/main.7cad7e24.css.map",
+    "main.dc404423.js.map": "/abz-test_task/static/js/main.dc404423.js.map",
     "559.f29f5585.chunk.css.map": "/abz-test_task/static/css/559.f29f5585.chunk.css.map",
     "559.2d16974a.chunk.js.map": "/abz-test_task/static/js/559.2d16974a.chunk.js.map",
-    "897.c9dae29d.chunk.css.map": "/abz-test_task/static/css/897.c9dae29d.chunk.css.map",
+    "897.ce041ec4.chunk.css.map": "/abz-test_task/static/css/897.ce041ec4.chunk.css.map",
     "897.1d980e4d.chunk.js.map": "/abz-test_task/static/js/897.1d980e4d.chunk.js.map",
     "289.5991c159.chunk.css.map": "/abz-test_task/static/css/289.5991c159.chunk.css.map",
     "289.1482bf29.chunk.js.map": "/abz-test_task/static/js/289.1482bf29.chunk.js.map",
@@ -43,7 +43,7 @@
     "184.01833b1f.chunk.js.map": "/abz-test_task/static/js/184.01833b1f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2437fb43.css",
-    "static/js/main.f2128c48.js"
+    "static/css/main.7cad7e24.css",
+    "static/js/main.dc404423.js"
   ]
 }
